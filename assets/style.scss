@@ -2,7 +2,7 @@ $jaune : hsl(41, 99%, 50%);
 $rose : hsl(352, 97%, 87%);
 $bleu : hsl(188, 100%, 50%);
 
-$test-bordure: 1px dashed tomato;
+$test: 1px dashed black;
 
 *,::after,::before{
     box-sizing: border-box;
@@ -13,12 +13,18 @@ $test-bordure: 1px dashed tomato;
 html{
     font-size: 16px;
 }
+header,main,footer{border:$test;margin-bottom: 20px;}
 header{
     position:relative;
-    background-color: $jaune;
 }
-header > img{
+#banner{
     width: 100%;
+    object-fit: cover;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: -5;
 }
 footer,
 .disk2{
@@ -29,7 +35,6 @@ section:last-child,
     background-color: $bleu;
 }
 h1{
-    border:$test-bordure;
     white-space:pre;
     text-align: left;
     border-bottom: 3px solid $rose;
@@ -41,16 +46,19 @@ h1 > span{
     width:100%;
 }
 .header{
+    /*
     border:$test-bordure;
     position:absolute;
     top:0;
     left:50%;
-    transform: translateX(-50%);max-width:1200px;
+    transform: translateX(-50%);
+    */
+    margin:auto;
+    max-width:1200px;
 }
 .header nav:first-child,
 .header > div{
     display:flex;
-    border:$test-bordure;
 }
 .header nav:first-child{
     justify-content: space-between;

@@ -9,13 +9,24 @@ html {
   font-size: 16px;
 }
 
-header {
-  position: relative;
-  background-color: hsl(41, 99%, 50%);
+header, main, footer {
+  border: 1px dashed black;
+  margin-bottom: 20px;
 }
 
-header > img {
+header {
+  position: relative;
+}
+
+#banner {
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -5;
 }
 
 footer,
@@ -29,7 +40,6 @@ section:last-child,
 }
 
 h1 {
-  border: 1px dashed tomato;
   white-space: pre;
   text-align: left;
   border-bottom: 3px solid hsl(352, 97%, 87%);
@@ -44,18 +54,20 @@ h1 > span {
 }
 
 .header {
-  border: 1px dashed tomato;
-  position: absolute;
-  top: 0;
-  left: 50%;
+  /*
+  border:$test-bordure;
+  position:absolute;
+  top:0;
+  left:50%;
   transform: translateX(-50%);
+  */
+  margin: auto;
   max-width: 1200px;
 }
 
 .header nav:first-child,
 .header > div {
   display: flex;
-  border: 1px dashed tomato;
 }
 
 .header nav:first-child {
