@@ -1,17 +1,62 @@
+$jaune : hsl(41, 99%, 50%);
+$rose : hsl(352, 97%, 87%);
+$bleu : hsl(188, 100%, 50%);
+
+$test-bordure: 1px dashed tomato;
+
 *,::after,::before{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-header{
-    background-color: hsl(41, 99%, 50%);
+html{
+    font-size: 16px;
 }
-.circle{
+header{
+    position:relative;
+    width:100%;
+    background-color: $jaune;
+}
+.header{
+    border:$test-bordure;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    max-width:1200px;
+    width:90%;
+}
+.header > nav,
+.header > div{
+    display:flex;
+    border:$test-bordure;
+}
+.header nav:first-child{
+    justify-content: space-between;
+}
+.header div{
+    justify-content: end;
+}
+h1{
+    border:$test-bordure;
+    white-space:pre;
+    text-align: left;
+    border-bottom: 3px solid $rose;
+}
+h1 > span{
+    color: $rose;
+}
+.disk1,
+.disk2{
     width:100px;
     height:100px;
-    // border-radius:50%;
+    border-radius:50%;
 }
-.circle:first-child,
+.disk1,
 section:last-child{
-    background-color: hsl(352, 97%, 87%);
+    background-color: $bleu;
+}
+.disk2,
+footer{
+    background-color: $rose;
 }
